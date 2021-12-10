@@ -10,15 +10,15 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
-        pkg-manager: npm
+          pkg-manager: npm
       - run:
-        command: npm test
-        name: Run Mocha tests
+          command: npm test
+          name: Run Mocha tests
       - store_artifacts:
-        path: /tmp/test-results
-        destination: raw-test-output
+          path: /tmp/test-results
+          destination: raw-test-output
       - store_test_results:
-        path: /tmp/test-results
+          path: /tmp/test-results
 workflows:
   node-tests:
     jobs:
