@@ -1,0 +1,27 @@
+.auth-preview {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-white);
+}
+
+.auth-title {
+    text-transform: capitalize;
+}
+
+.user-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50rem;
+}
+
+.user-type > * {
+    width: 48%;
+}   

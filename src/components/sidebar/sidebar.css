@@ -1,0 +1,24 @@
+.sidebar {
+    background: white;
+    color: var(--color-dark);
+    padding: 2rem 4rem;
+}
+
+.sidebar .sidebar-item {
+    color: var(--color-dark);
+    font-size: 1.6rem;
+    font-family: 'Lato', sans-serif;
+    padding: 1rem 2rem;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.sidebar .sidebar-item.active {
+    background: var(--color-primary);
+    border-radius: 5rem;
+    color: var(--color-white);
+}
+
+.sidebar .sidebar-item i {
+    margin-right: 1.5rem;
+}

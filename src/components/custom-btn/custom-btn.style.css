@@ -1,0 +1,36 @@
+.custom-btn {
+    width: 100%;
+    height: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-transform: capitalize;
+    transition: all .15s ease;
+    transform: translateY(0rem);
+}
+
+.custom-btn:hover {
+    transform: translateY(-.5rem);
+}
+
+.custom-btn:active {
+    transform: translateY(-.3rem);
+}
+
+.custom-btn.signup, .custom-btn.dark {
+    background: var(--color-dark);
+    color: var(--color-white);
+    border: 1px solid var(--color-black);
+}
+
+.custom-btn.overlay {
+    background: transparent;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+}
+
+.custom-btn.overlay.login {
+    color: var(--color-green);
+    border: 1px solid var(--color-green);
+}
