@@ -15,6 +15,7 @@ const AuthPreview = ({action}) => {
     return (
         <div className='auth-preview'>
             <div className='circle-top'></div>
+            <h2 className='secondary-header'>Internship Tracker</h2>
             <h2 className='secondary-header auth-title'>user type</h2>
             <p className='text-paragraph left-align center auth-text'>
                 Please select your type

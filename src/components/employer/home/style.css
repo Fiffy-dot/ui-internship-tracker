@@ -1,0 +1,16 @@
+.home-table {
+    padding: 2rem 4rem;
+    margin-top: 5rem;
+    overflow-y: scroll;
+}
+
+.create-job-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 5rem;
+}
+
+.create-job-btn button {
+    flex-basis: 30%;
+}

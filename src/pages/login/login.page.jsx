@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import InputField from '../../components/input-field/input-field.component';
 import CustomBtn from '../../components/custom-btn/custom-btn.component';
 import { URLS } from '../../utils/service';
 import './login-page.style.css';
+import { SetUser } from '../../redux/user/user.action';
+import { connect } from 'react-redux';
+import { errorMessage, successMessage } from '../../components/utils/custom-toast';
 
-const Login = ({type}) => {
+const Login = ({type, setUser }) => {
     const navigate = useNavigate();
     const [state, setstate] = useState({
         email: "",
@@ -20,8 +24,20 @@ const Login = ({type}) => {
 
     const handleSubmitButton = (e) => {
         e.preventDefault();
-        // do some actions
-        navigate(`/${type}/dashboard`)
+        axios.post(`${URLS.apiBaseUrl}/${type}/login`, state).then((data) => {
+            console.log(data.data)
+            if (data.data.status === true) {
+                setUser(data.data.user);
+                localStorage.setItem("auth", data.data.token)
+                successMessage(data.data.message)
+                navigate(`/${type}/dashboard`)
+            } else {
+                errorMessage(data.data.error)
+            }
+        }).catch(err => {
+            console.log(err)
+            errorMessage("Internal Error")
+        })
     }
 
     return (
@@ -82,4 +98,8 @@ const Login = ({type}) => {
     )
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => ({
+    setUser: (user) => dispatch(SetUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(Login);

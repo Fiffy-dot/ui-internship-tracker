@@ -1,0 +1,41 @@
+.view-single-job {
+    
+}
+
+.view-one-job {
+    padding: 2rem 4rem;
+    margin-bottom: 5rem;
+}
+
+.view-one-job .title {
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.view-one-job .position {
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.view-one-job .due-date {
+    font-size: 300;
+    font-size: 1.4rem;
+}
+
+.view-one-job .description {
+    font-size: 300;
+    font-size: 1.6rem;
+}
+
+.view-one-job .delete {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 2rem;
+}
+
+.view-one-job .delete i {
+    color: var(--color-red);
+    margin-right: 2rem;
+    cursor: pointer;
+}

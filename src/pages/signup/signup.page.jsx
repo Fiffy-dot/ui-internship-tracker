@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import InputField from '../../components/input-field/input-field.component';
 import CustomBtn from '../../components/custom-btn/custom-btn.component';
+import axios from 'axios';
 import { URLS } from '../../utils/service';
 import './signup.style.css';
+import { errorMessage, successMessage, warningMessage } from '../../components/utils/custom-toast';
 
-const SignUp = ({ action }) => {
+const SignUp = ({ type }) => {
+    const navigate = useNavigate();
     const [state, setstate] = useState({
         email: "",
         password: "",
@@ -21,13 +24,30 @@ const SignUp = ({ action }) => {
         e.preventDefault();
         // don't send confirm password
         if (state.confirmPassword !== state.password) {
-            toast("password does not match");
+            warningMessage("password does not match");
         } else if (!state.email || state.email === "") {
-            toast("email is required");
+            warningMessage("email is required");
         } else if (!state.name || state.name === "") {
-            toast("name is required");
+            warningMessage("name is required");
         }else {
-            alert({...state});
+            let data = {name: state.name,
+                password: state.password,
+                email: state.email, 
+                };
+            type !== "student" ? delete data["resumeLink"] : data["resumeLink"] = "http"; 
+            axios.post(
+                `${URLS.apiBaseUrl}/${type}/register`, data
+                ).then((data) => {
+                    if (data.data.status === "ok") {
+                        successMessage("User successfully created")
+                        navigate(`/${type}/login`)
+                    } else {
+                        errorMessage(data.data.error)
+                    }
+                }).catch(err => {
+                    console.log(err)
+                    errorMessage("Could not create user")
+                })
         }
         // vaidate
         

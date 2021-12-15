@@ -175,3 +175,73 @@ body {
     right: -25rem;
     bottom: -25rem;
 }
+
+.back-button {
+    position: absolute;
+    z-index: 1000000000000000000;
+    width: 10%;
+    bottom: 5rem;
+    right: 5rem;
+}
+
+
+.splited {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.splited > *:first-child {
+    flex-basis: 20%;
+}
+
+.splited > *:last-child {
+    flex-basis: 78%;
+}
+
+.update-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.update-button button {
+    flex-basis: 25%;
+}
+
+.apply-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.apply-button button {
+    width: fit-content;
+    padding-left: 2rem;
+    margin-left: 2rem;
+    padding-right: 2rem;
+}
+
+.main-page {
+    background: var(--color-primary);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+tr, th {
+    font-size: 1.4rem ;
+    margin-bottom: 1rem !important;
+    cursor: pointer;
+}

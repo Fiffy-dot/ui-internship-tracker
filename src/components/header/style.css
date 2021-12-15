@@ -1,0 +1,20 @@
+.header {
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+}
+
+.header > *:first-child {
+    flex-basis: 95%;
+}
+
+.header > *:last-child {
+    flex-basis: 5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    font-size: 2rem;
+    cursor: pointer;
+}

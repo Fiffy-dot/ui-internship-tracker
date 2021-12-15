@@ -8,11 +8,12 @@ const InputField = ({
     name, 
     value, 
     autoComplete,
-    required
+    required,
+    classes
 }) => {
     return (
         <input 
-            className='input-field'
+            className={`input-field ${classes}`}
             placeholder={placeholder}
             onChange={(e) => handleOnChange(e)}
             name={name}

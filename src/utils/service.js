@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const URLS = {
-    apiBaseUrl: process.env.REACT_APP_API_BASE_URL,
+    apiBaseUrl: "http://localhost:8000",
 }
 
 export const Patterns = {

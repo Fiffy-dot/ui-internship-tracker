@@ -22,3 +22,7 @@
 .sidebar .sidebar-item i {
     margin-right: 1.5rem;
 }
+
+.logo {
+    cursor: pointer;
+}
